@@ -7,7 +7,17 @@ Template rendering abstraction library. Abstract your libraries from specific te
 This library provides the [```TemplateInterface```](https://github.com/slepic/php-template/blob/master/src/TemplateInterface.php), which is the abstraction of any data rendering template.
 And it also provides one simple implementation called [```OutputBufferTemplate```](https://github.com/slepic/php-template/blob/master/src/OutputBufferTemplate.php), which renders the data using another PHP script and PHP ob_* functions.
 
-# Contribution
+## Requirements
+
+PHP 5.6
+
+## Installation
+
+Install with composer
+
+```composer require slepic/php-template```
+
+## Contribution
 
 If you create a library that depends on this one and you use composer, please consider the following:
 * If you implement the ```TemplateInterface```, please place ```"slepic/php-template-implementation"``` in the provide section of your ```composer.json```.
