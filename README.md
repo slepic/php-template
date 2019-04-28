@@ -9,7 +9,7 @@ And it also provides one simple implementation called [```OutputBufferTemplate``
 
 ## Requirements
 
-PHP 5.6
+PHP 5.6 or 7
 
 ## Installation
 
