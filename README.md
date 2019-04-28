@@ -1,4 +1,7 @@
-# php-templating
+[![Build Status](https://travis-ci.org/slepic/php-templating.svg?branch=master)](https://travis-ci.org/slepic/php-templating)
+[![Style Status](https://styleci.io/repos/183834781/shield)](https://styleci.io/repos/183834781)
+
+# php-template
 Template rendering abstraction library. Abstract your libraries from specific templating engines.
 
 This library provides the TemplateInterface, which is the abstraction of any data rendering template.
