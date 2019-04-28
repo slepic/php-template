@@ -1,6 +1,6 @@
 <?php
 
-namespace Slepic\Templating;
+namespace Slepic\Templating\Template;
 
 /**
  * Interface TemplateInterface
@@ -11,9 +11,10 @@ namespace Slepic\Templating;
 interface TemplateInterface
 {
     /**
+     * Renders the template with given data.
+     *
      * @param mixed $data
      * @return string
-     * @throws \Exception if the $data does not satisfy requirements of the concrete template implementation.
      */
     public function render($data);
 }

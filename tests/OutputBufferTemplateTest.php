@@ -1,10 +1,10 @@
 <?php
 
-namespace Slepic\Tests\Templating;
+namespace Slepic\Tests\Templating\Template;
 
 use PHPUnit\Framework\TestCase;
-use Slepic\Templating\OutputBufferTemplate;
-use Slepic\Templating\TemplateInterface;
+use Slepic\Templating\Template\OutputBufferTemplate;
+use Slepic\Templating\Template\TemplateInterface;
 
 class OutputBufferTemplateTest extends TestCase
 {

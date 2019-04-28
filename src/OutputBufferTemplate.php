@@ -1,6 +1,6 @@
 <?php
 
-namespace Slepic\Templating;
+namespace Slepic\Templating\Template;
 
 /**
  * Class OutputBufferTemplate
