@@ -1,5 +1,5 @@
 {
-    "name": "slepic/php-templating",
+    "name": "slepic/php-template",
     "description": "Simple PHP abstraction of template rendering.",
     "type": "library",
     "require": {
