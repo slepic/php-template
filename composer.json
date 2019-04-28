@@ -17,6 +17,13 @@
             "email": "gslepic@gmail.com"
         }
     ],
+    "suggest": {
+        "slepic/php-template-implementation": "See existing TemplateInterface implementations.",
+        "slepic/php-template-consumer": "See existing TemplateInterface consumers"
+    },
+    "provide": {
+        "slepic/php-template-implementation": "*"
+    },
     "minimum-stability": "stable",
     "require-dev": {
         "phpunit/phpunit": "~5.0",
