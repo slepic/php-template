@@ -13,8 +13,8 @@ interface TemplateInterface
     /**
      * Renders the template with given data.
      *
-     * @param mixed $data
+     * @param array $data
      * @return string
      */
-    public function render($data);
+    public function render(array $data);
 }

@@ -55,10 +55,6 @@ class OutputBufferTemplateTest extends TestCase
             [[]],
             [['test' => \md5(\time())]],
             [['data' => \md5(\time())]],
-            [new \stdClass()],
-            [(object) ['test' => \md5(\time())]],
-            [(object) ['data' => \md5(\time())]],
-            [new \ArrayObject()],
             [[15 => \md5(\time()), 'test' => \md5(\time())]],
         ];
     }

@@ -22,3 +22,10 @@ Install with composer
 If you create a library that depends on this one and you use composer, please consider the following:
 * If you implement the ```TemplateInterface```, please place [```slepic/php-template-implementation```](https://packagist.org/providers/slepic/php-template-implementation) in the provide section of your ```composer.json```.
 * If you consume the ```TemplateInterface```, please place [```slepic/php-template-consumer```](https://packagist.org/providers/slepic/php-template-consumer) in the provide section of your ```composer.json```.
+
+## Changelog
+
+### 0.2.0
+
+* changed travis setup to only run tests in oldest and newest php versions supported by this package (that is 5.6 and 7.3).
+* added array typehint for first argument of TemplateInterface::render 

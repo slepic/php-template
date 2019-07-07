@@ -28,12 +28,12 @@ class OutputBufferTemplate implements TemplateInterface
     }
 
     /**
-     * @param mixed $data
+     * @param array $data
      * @return string
      */
-    public function render($data)
+    public function render(array $data)
     {
-        \extract((array) $data);
+        \extract($data);
         \ob_start();
         require($this->templateFile);
         return \ob_get_clean();
