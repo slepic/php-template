@@ -27,5 +27,5 @@ If you create a library that depends on this one and you use composer, please co
 
 ### 0.2.0
 
-* changed travis setup to only run tests in oldest and newest php versions supported by this package (that is 5.6 and 7.3).
-* added array typehint for first argument of TemplateInterface::render 
+* Added array typehint for first argument of ```TemplateInterface::render()```.
+* Changed travis setup to only run tests in oldest and newest php versions supported by this package (that is 5.6 and 7.3).
