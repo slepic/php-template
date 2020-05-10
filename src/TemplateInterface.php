@@ -1,11 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Slepic\Templating\Template;
 
 /**
- * Interface TemplateInterface
- * @package Slepic\Templating
- *
  * Represents a template for rendering certain data.
  */
 interface TemplateInterface
@@ -16,5 +15,5 @@ interface TemplateInterface
      * @param array $data
      * @return string
      */
-    public function render(array $data);
+    public function render(array $data): string;
 }

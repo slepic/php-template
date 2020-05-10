@@ -1,39 +1,28 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Slepic\Templating\Template;
 
 /**
- * Class OutputBufferTemplate
- * @package Slepic\Templating
- *
  * An implementation of TemplateInterface using native PHP output buffering and a plain PHP script with echo calls.
  */
 class OutputBufferTemplate implements TemplateInterface
 {
-    /**
-     * @var string
-     */
-    private $templateFile;
+    private string $templateFile;
 
-    /**
-     * OutputBufferTemplate constructor.
-     * @param string $templateFile
-     */
-    public function __construct($templateFile)
+    public function __construct(string $templateFile)
     {
-        if (!\is_string($templateFile)) {
-            throw new \InvalidArgumentException('Template file must be a string.');
-        }
         $this->templateFile = $templateFile;
     }
 
-    /**
-     * @param array $data
-     * @return string
-     */
-    public function render(array $data)
+    public function render(array $data): string
     {
-        \extract($data);
+        if (\count($data) !== \extract($data)) {
+            throw new \InvalidArgumentException(
+                'Expected associative array where keys are valid variable names.'
+            );
+        }
         \ob_start();
         require($this->templateFile);
         return \ob_get_clean();

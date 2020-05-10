@@ -13,49 +13,58 @@ class OutputBufferTemplateTest extends TestCase
      *
      * @return void
      */
-    public function testImplements()
+    public function testImplements(): void
     {
         $template = new OutputBufferTemplate(__DIR__ . '/test_ok.phtml');
         $this->assertInstanceOf(TemplateInterface::class, $template);
     }
 
-
     /**
      * Tests that test_ok.phtml template is rendered properly.
      *
-     * @param mixed $data
+     * @param array $data
      * @return void
      * @dataProvider provideRenderData
      */
-    public function testRender($data)
+    public function testRender(array $data): void
     {
         $template = new OutputBufferTemplate(__DIR__ . '/test_ok.phtml');
         $output = $template->render($data);
 
-        //prepare expected context as it should be passed to the template through require directive.
-        //the data variable contains the original data, but if the data contain 'data' key then it overwrites it.
-        $expectedLocalVars = \array_merge(['data' => $data], (array) $data);
-        //numeric keys in data are not extracted into the context.
-        foreach ($expectedLocalVars as $key => $localVar) {
-            if (\is_numeric($key)) {
-                unset($expectedLocalVars[$key]);
-            }
-        }
+        $expectedLocalVars = \array_merge(['data' => $data], $data);
 
-        //assert the test template has printed out the expected context.
         $this->assertSame(\print_r($expectedLocalVars, true), $output);
     }
 
-    /**
-     * @return array
-     */
-    public function provideRenderData()
+    public function provideRenderData(): array
     {
         return [
             [[]],
             [['test' => \md5(\time())]],
             [['data' => \md5(\time())]],
-            [[15 => \md5(\time()), 'test' => \md5(\time())]],
+        ];
+    }
+
+    /**
+     * @param array $data
+     *
+     * @dataProvider provideRenderInvalidSymbolsData
+     */
+    public function testRenderInvalidSymbols(array $data): void
+    {
+        $template = new OutputBufferTemplate(__DIR__ . '/test_ok.phtml');
+
+        $this->expectException(\Throwable::class);
+
+        $template->render($data);
+    }
+
+    public function provideRenderInvalidSymbolsData(): array
+    {
+        return [
+            [['a', 'b']],
+            [['a' => 'b', 2 => 'c']],
+            [['1badvarname' => 'value']],
         ];
     }
 }

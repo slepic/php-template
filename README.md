@@ -9,7 +9,7 @@ And it also provides one simple implementation called [```OutputBufferTemplate``
 
 ## Requirements
 
-PHP 5.6 or 7
+PHP 7.4 or 8
 
 ## Installation
 
@@ -24,6 +24,16 @@ If you create a library that depends on this one and you use composer, please co
 * If you consume the ```TemplateInterface```, please place [```slepic/php-template-consumer```](https://packagist.org/providers/slepic/php-template-consumer) in the provide section of your ```composer.json```.
 
 ## Changelog
+
+### 1.0.0
+
+* bump PHP to ^7.4 || ^8.0
+* TemplateInterface::render() now has string return typehint
+* OutputBufferTemplate::render throws InvalidArgumentException if data argument contains keys that cannot be used as local variable names
+* use squizlabs/php_codesniffer instead of friendsofphp/php-cs-fixer for style check
+* bump dev deps to latest versions
+* use composer docker image for dev
+* move composer scripts to makefile
 
 ### 0.2.0
 
