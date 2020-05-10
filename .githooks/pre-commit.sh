@@ -1,4 +1,4 @@
 #!/bin/bash
 
-composer pre-commit
+make cs-check test
 exit $?
