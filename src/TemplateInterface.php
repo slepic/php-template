@@ -12,7 +12,7 @@ interface TemplateInterface
     /**
      * Renders the template with given data.
      *
-     * @param array $data
+     * @param array<string,mixed> $data
      * @return string
      */
     public function render(array $data): string;

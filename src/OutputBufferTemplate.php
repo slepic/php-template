@@ -23,8 +23,15 @@ class OutputBufferTemplate implements TemplateInterface
                 'Expected associative array where keys are valid variable names.'
             );
         }
+
         \ob_start();
-        require($this->templateFile);
+        try {
+            include($this->templateFile);
+        } catch (\Throwable $e) {
+            \ob_end_clean();
+            throw $e;
+        }
+
         return \ob_get_clean();
     }
 }
